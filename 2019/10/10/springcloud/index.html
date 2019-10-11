@@ -477,9 +477,9 @@
 <p>这就实现了服务的自动注册、发现、状态监控。</p>
 <p>所以完成模块间的相互调用我们使用erueka而不是直接调用。首先创建eureka服务器</p>
 <h4 id="2-2-1-使用eureka"><a href="#2-2-1-使用eureka" class="headerlink" title="2.2.1 使用eureka"></a>2.2.1 使用eureka</h4><p>用Spring Initializr 创建一个新的springboot子模块</p>
-<p><img src="SpringCloud%E7%94%A8%E6%B3%95%E7%AE%80%E4%BB%8B%5C1.png" alt="1"></p>
+<p><img src="http://pz74ylt9u.bkt.clouddn.com/1.png" alt="1"></p>
 <p>添加eureka server</p>
-<p><img src="SpringCloud%E7%94%A8%E6%B3%95%E7%AE%80%E4%BB%8B%5C2.png" alt="1"></p>
+<p><img src="http://pz74ylt9u.bkt.clouddn.com/2.png" alt="1"></p>
 <p>创建之后pom依赖以及引好。</p>
 <p>在主启动类上添加@EnableEurekaServer注解。</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@SpringBootApplication</span>
@@ -501,7 +501,7 @@ eureka:
     service-url:
       defaultZone: http://127.0.0.1:10086/eureka #注册到eureka（eureka本身也需要注册）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>此时我们就可以打开10086端口看到eureka的界面，看到已注册的服务（目前只有eureka一个）。</p>
-<p><img src="SpringCloud%E7%94%A8%E6%B3%95%E7%AE%80%E4%BB%8B%5C3.png" alt="1"></p>
+<p><img src="http://pz74ylt9u.bkt.clouddn.com/3.png" alt="1"></p>
 <h3 id="2-3创建服务提供者-server"><a href="#2-3创建服务提供者-server" class="headerlink" title="2.3创建服务提供者 server"></a>2.3创建服务提供者 server</h3><p>创建过程与上一步类似，不在赘述。但是在主启动类上不再使用@EnableEurekaServer注解，而是@EnableDiscoveryClient注解。</p>
 <p>创建一个controller，需要注意的是，springboot默认只会帮我们扫描主启动类下的包，所以controller最好放在与主启动类同级目录下。</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@RestController</span>
@@ -547,7 +547,7 @@ RestTemplate <span class="token function">restTemplate</span><span class="token 
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>启动三个服务器，访问测试</p>
-<p><img src="SpringCloud%E7%94%A8%E6%B3%95%E7%AE%80%E4%BB%8B%5C4.png" alt="1"></p>
+<p><img src="http://pz74ylt9u.bkt.clouddn.com/4.png" alt=""></p>
 <p>测试成功。</p>
 <p>现在已经完成了SpringCloud的基本使用，下面会总结其他几个部件的作用及使用。</p>
 <script>
@@ -869,7 +869,7 @@ RestTemplate <span class="token function">restTemplate</span><span class="token 
                 <i class="fas fa-chevron-left"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2019/10/10/springcloud-yong-fa-jian-jie/">
+                <a href="/2019/10/10/springcloud/">
                     <div class="card-image">
                         
                         
